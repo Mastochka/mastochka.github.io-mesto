@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Mastochka/mastochka.github.io-mesto/issues"
   },
-  "homepage": "https://github.com/Mastochka/mastochka.github.io-mesto#readme",
+  "homepage": "https:///mastochka.github.io/mesto",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
