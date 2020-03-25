@@ -12,7 +12,7 @@ import CardList from './modules/CardList';
 import FormValidator from './modules/FormValidator';
 import Popup from './modules/Popup';
 import UserInfo from './modules/UserInfo';
-
+const isDev = process.env.NODE_ENV === 'development';
 const popUpAddButton = document.querySelector('.user-info__button');
 const popUpEditButton = document.querySelector('.user-edit__button');
 const popUpAddCloseButton = document.querySelector('.popup__close-add');
@@ -24,7 +24,7 @@ const formEdit = document.forms.edit;
 const formAvatar = document.forms.avatar;
 //вызовы классов
 const api = new Api({
-    baseUrl: 'https://praktikum.tk/cohort8',
+    baseUrl: (isDev ? 'http://praktikum.tk/cohort8': 'https://praktikum.tk/cohort8'),
     headers: {
       authorization: '5f12b6e1-3a62-4ec8-9dbd-21faf0d03926',
       'Content-Type': 'application/json'
@@ -40,6 +40,7 @@ const userInfo = new UserInfo(formEdit,document.querySelector('.user-info__name'
 const formAddValidator = new FormValidator(popUpAdd.container);
 const formAvatarValidator = new FormValidator(popUpAvatar.container);
 const formEditValidator = new FormValidator(popUpEdit.container);
+
 
 
 /*Events*/
