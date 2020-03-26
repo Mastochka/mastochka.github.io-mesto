@@ -2,11 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackMd5Hash = require('webpack-md5-hash');
-const ImageWebpackLoader = require('image-webpack-loader');
 const webpack = require('webpack');
-new webpack.DefinePlugin({
-    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-});
+
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 module.exports = {
@@ -56,12 +53,16 @@ module.exports = {
             canPrint: true
     }),
         new HtmlWebpackPlugin({
-            // Означает, что:
-            inject: false, // стили НЕ нужно прописывать внутри тегов
+           
+            inject: false,
             
-            template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-            filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+            template: './src/index.html',
+            filename: 'index.html'
           }),
+        new webpack.DefinePlugin({
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }),
+        new WebpackMd5Hash()
 
     ]
 };

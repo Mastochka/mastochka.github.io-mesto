@@ -12,7 +12,9 @@ import CardList from './modules/CardList';
 import FormValidator from './modules/FormValidator';
 import Popup from './modules/Popup';
 import UserInfo from './modules/UserInfo';
+
 const isDev = process.env.NODE_ENV === 'development';
+
 const popUpAddButton = document.querySelector('.user-info__button');
 const popUpEditButton = document.querySelector('.user-edit__button');
 const popUpAddCloseButton = document.querySelector('.popup__close-add');
