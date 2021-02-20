@@ -1,5 +1,6 @@
 # Photo gallery @ mastochka.github.io/mastochka.github.io-mesto/
-# HTML
-# CSS
-# JS
-# БЭМ-нейминг
+## Stack:
+### HTML
+### CSS
+### JS
+### BEM-naming
